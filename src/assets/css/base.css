@@ -1,0 +1,117 @@
+@import "./normalize.css";
+
+/*:root -> 获取根元素html*/
+:root {
+  --color-text: #2c3e50;
+  --color-high-text: #41b883;
+  --color-tint: #41b883;
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+  --color-boxshadow: rgba(65, 184, 131,0.5);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+@media screen and (min-width:1500px){
+  html{
+    font-size: 86.8%;
+  }
+  body{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:1500px){
+  html{
+    font-size: 104.1%;
+  }
+  body{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:1200px){
+  html{
+    /* font-size: 62.5%; */
+    font-size: 83.3%;
+  }
+  body{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width:900px){
+  html{
+    font-size: 62.5%;
+  }
+  body{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:600px){
+  html{
+    font-size: 41.6%;
+  }
+  body{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width:300px){
+  html{
+    font-size: 20.8%;
+  }
+  body{
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  /* user-select: none; 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent; /* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
+  background: #e9ebec;
+  color: var(--color-text);
+  /* rem vw/vh */
+
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+

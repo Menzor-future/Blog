@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="text/JavaScript">
+      // fnResize();
+
+      function fnResize() {
+        //设置body的宽高为视口宽高
+        let w = window.innerWidth || document.documentElement.clientWidth || document.body.Width;
+        let h = window.innerHeight || document.documentElement.clientHeight || document.body.Height;
+        document.getElementsByTagName('body')[0].style.height = (h-54)+"px";
+        document.getElementsByTagName('body')[0].style.maxWidth = w+"px";
+
+//         let deviceWidth = document.documentElement.clientWidth || window.innerWidth;
+//         if (deviceWidth >= 750) {
+//           deviceWidth = 750;
+//         }
+//         if (deviceWidth <= 320) {
+//           deviceWidth = 320;
+//         }
+//         document.documentElement.style.fontSize = (deviceWidth / 10) + 'px';
+      } 
+      window.onload = function (){
+        fnResize()
+      }
+      window.onresize = function () {
+        fnResize();
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
