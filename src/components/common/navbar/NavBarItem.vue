@@ -44,10 +44,10 @@ export default {
 /* @import url(); 引入css类 */
 .nav-bar-item {
 
-  width: 200px;
+  width: 20rem;
   line-height: 44px;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 .active {
   color: var(--color-high-text);

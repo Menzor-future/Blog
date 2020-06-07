@@ -24,7 +24,7 @@ export default {
       this.$http
         .get("/api/getPhotoInfo", {})
         .then(res => {
-          console.log("获取图片数据", res);
+          // console.log("获取图片数据", res);
           this.photoList = res.data;
         })
         .catch(err => {
@@ -33,7 +33,7 @@ export default {
     },
     itemClick(index){
       this.$router.push({path:'/photoshow',query:{itemindex:index}})
-      console.log(index)
+      // console.log(index)
     }
   },
   //生命周期 - 创建完成（访问当前this实例）
@@ -94,7 +94,6 @@ export default {
   width: 100%;
   text-align: center;
   font-weight: 500;
-  height: 3rem;
   line-height: 3rem;
 
 }

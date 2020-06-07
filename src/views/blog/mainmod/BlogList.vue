@@ -26,7 +26,7 @@ export default {
   methods:{
     getBlogList(){
       this.$http.get('/api/getBlogList',{}).then( res =>{
-        console.log('res',res)
+        // console.log('res',res)
         this.blogList = res.data
       }).catch( err => {
         console.log(err)

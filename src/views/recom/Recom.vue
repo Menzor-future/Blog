@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LoginBox from "components/common/LoginBox";
+import LoginBox from "./LoginBox";
 export default {
   name: "Recom",
   data() {

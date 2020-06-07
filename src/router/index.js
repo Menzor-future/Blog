@@ -1,6 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+// 使用cdn加速取代本地插件
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
 import store from '../store/index'
+
 Vue.use(VueRouter)
 const Home = () => import('../views/home/Home')
 
@@ -92,27 +94,27 @@ const router = new VueRouter({
 })
 
 // 导航守卫
-// router.beforeEach((to, from, next) => {
-//   const nextJudge = ['/photomanage', '/photopublish', '/blogpublish', '/blogmanage']
-//   if (to.path === '/admin') {
-//     if (store.state.loginStatus) {
-//       next('/admin')
-//       return
-//     }
-//     else {
-//       next('/recom')
-//     }
-//   }
-//   if (nextJudge.indexOf(to.path) >= 0) {
-//     if (store.state.loginStatus) {
-//       next()
-//     }
-//     else {
-//       next('/recom')
-//     }
-//   } else {
-//     next()
-//   }
+router.beforeEach((to, from, next) => {
+  const nextJudge = ['/photomanage', '/photopublish', '/blogpublish', '/blogmanage']
+  if (to.path === '/admin') {
+    if (store.state.loginStatus) {
+      next('/admin')
+      return
+    }
+    else {
+      next('/recom')
+    }
+  }
+  if (nextJudge.indexOf(to.path) >= 0) {
+    if (store.state.loginStatus) {
+      next()
+    }
+    else {
+      next('/recom')
+    }
+  } else {
+    next()
+  }
 
-// })
+})
 export default router

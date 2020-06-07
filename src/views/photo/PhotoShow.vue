@@ -48,7 +48,7 @@ export default {
       this.$http
         .get("/api/getPhotoInfo", {})
         .then(res => {
-          console.log("获取图片数据", res);
+          // console.log("获取图片数据", res);
           this.photoList = res.data;
           this.initPhoto();
         })
@@ -60,13 +60,13 @@ export default {
       this.photo = this.photoList[this.defaultIndex];
     },
     navClick(index) {
-      console.log(index);
+      // console.log(index);
       this.defaultIndex = index;
       this.photo = this.photoList[this.defaultIndex];
     },
     leftClick() {
       this.defaultIndex -= 1;
-      console.log(this.defaultIndex);
+      // console.log(this.defaultIndex);
       if (this.defaultIndex === -1) {
         this.leftIsShow = false;
       } else {
@@ -76,8 +76,7 @@ export default {
     },
     rightClick() {
       this.defaultIndex += 1;
-      console.log(this.defaultIndex);
-      console.log(this.photoList.length - 1);
+      // console.log(this.defaultIndex);
       if (this.defaultIndex === this.photoList.length) {
         this.rightIsShow = false;
       } else {
@@ -100,7 +99,7 @@ export default {
 .photo-box {
   display: flex;
   width: 100%;
-  margin-top: 44px;
+  margin-top: 54px;
   height: 100%;
   background-color: #fff;
   justify-content: center;
@@ -119,9 +118,9 @@ export default {
   text-align: center;
 }
 .photo-list-nav dt {
-  height: 3rem;
+
   line-height: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .photo-list-nav dt:hover {
   cursor: pointer;
@@ -137,7 +136,7 @@ export default {
 .center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   max-width: 100%;
   height: 90%;
   background-color: #000;
@@ -154,19 +153,19 @@ export default {
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-align: ;
+  text-align:center ;
   font-weight: 700;
   background-color: #000;
 }
 .left:hover,
 .right:hover {
   cursor: pointer;
-  background-color:rgb(110, 110, 110);
+  background-color: #666;
 }
 .imgBox {
   width: 100%;
-  height: 85%;
   display: flex;
+  max-height: 85%;
   justify-content: center;
 }
 img {
@@ -177,8 +176,10 @@ img {
 }
 .info {
   display: flex;
+  width: 100%;
   flex-direction: column;
   height: 15%;
+  align-self: flex-end;
 }
 .info div {
   flex: 1;

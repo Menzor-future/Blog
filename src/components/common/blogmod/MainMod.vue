@@ -40,5 +40,11 @@ export default {
     width: 60%;
   }
 } */
+@media screen and (max-width: 500px) {
+  .main-mod{
+    margin-left: 0;
+    width: 85rem;
+  }
+}
 
 </style>

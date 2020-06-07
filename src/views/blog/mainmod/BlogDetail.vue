@@ -3,6 +3,7 @@
   <div class="blogDetailBox">
     <toast v-show="tipIsShow" class="tip">{{tipMsg}}</toast>
     <mavon-editor
+
       v-show="detailIsShow"
       class="md"
       style="z-index:3"
@@ -74,7 +75,7 @@ export default {
             id: this.detailId 
           })
           .then(res => {
-            console.log(res);
+            // console.log(res);
             this.isTap = true;
           });
         }
@@ -84,12 +85,11 @@ export default {
   created() {
     // 通过路由拿到上一页面传过来的文章id
     this.detailId = parseInt(this.$route.query.id);
-        console.log(this.detailId)
 
     // 组件开始创建，请求服务器文章数据
     this.$http.get("/api/getBlogDetail", { params: { id: this.detailId } })
       .then(res => {
-        console.log(res);
+        // console.log(res);
         // 拿到数据了，先放进result里。
         this.result = res.data.result;
         this.detail = res.data.result[0][0];
@@ -144,5 +144,8 @@ export default {
   line-height: 40px;
 
   text-align: center;
+}
+.v-note-wrapper{
+  min-width: 0;
 }
 </style>

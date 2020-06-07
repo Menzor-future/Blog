@@ -42,14 +42,14 @@ export default {
   display: flex;
   position: fixed;
   z-index:9;
-  width: 100vw;
+  width: 100%;
   top:0;
   height: 44px;
   justify-content: center;
   align-items: center;
   color: var(--color-text);
   background-color: var(--color-background);
-  box-shadow: 0px 2px 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0.2rem 0.3rem 0.5rem rgba(0, 0, 0, 0.05);
 
 }
 .logo img{

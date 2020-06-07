@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import NavBar from 'components/common/navbar/NavBar'
 import Home from 'views/home/Home.vue'
 export default {

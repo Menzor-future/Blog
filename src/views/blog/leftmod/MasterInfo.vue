@@ -72,7 +72,7 @@ export default {
   methods: {
     getSumInfo() {
       this.$http.get("/api/getSumInfo").then(res => {
-        console.log('获取博客统计数据',res)
+        // console.log('获取博客统计数据',res)
         this.BlogLikedSum = res.data[0][0].likednumSum;
         this.blogReadSum = res.data[1][0].readnumSum;
         this.blogRelaySum = res.data[2][0].relaySum;
@@ -80,7 +80,7 @@ export default {
       });
 
       this.$http.get("/api/getPhotoSumInfo").then(res=>{
-        console.log('获取图片的统计数据',res);
+        // console.log('获取图片的统计数据',res);
         this.photoSum = res.data[0][0].photoSum;
         this.photoLikedSum = res.data[1][0].likednumSum;
         this.photoReadSum = res.data[2][0].readnumSum;

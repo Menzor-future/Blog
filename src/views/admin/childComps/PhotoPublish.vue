@@ -34,8 +34,9 @@ export default {
         console.log("标题不能为空");
       } else {
         this.$http({
-          // url: "http://120.79.187.154:888/updateimg",
-          url: "http://localhost:888/phototPost",
+          url: "http://120.79.187.154:888/phototPost",
+          // 本地调试应当启用的地址
+          // url: "http://localhost:888/phototPost",
           method: "post",
           data: this.formdata,
           headers: { "Content-Type": "multipart/form-data" }
@@ -45,11 +46,12 @@ export default {
               "提交作品信息，将服务器图片从暂存文件夹移到正式文件夹，清空暂存文件夹",
               res
             );
-            // 1.let resUrl = "http://120.79.187.154:3000" + res.data;
-            let newUrl = "http://localhost:888" + res.data;
-            // 2.用返回的url替换预览图片连接
+            // 本地调试应当启用的地址
+            let newUrl = "http://120.79.187.154:888" + res.data;
+            // let newUrl = "http://localhost:888" + res.data;
+            // 1.用返回的url替换预览图片连接
             this.imgSrc = newUrl;
-            // 3.提交作品数据到数据库
+            // 2.提交作品数据到数据库
             that.$http
               .post("/api/postPhotoInfo", {
                 title: "《" + that.title + "》",
@@ -77,16 +79,16 @@ export default {
       this.formdata = formdata;
       //将图片数据放到表单中
       this.$http({
-        // url: "http://120.79.187.154:888/updateimg",
-        url: "http://localhost:888/phototPreview",
+        url: "http://120.79.187.154:888/phototPreview",
+        // url: "http://localhost:888/phototPreview",
         method: "post",
         data: formdata,
         headers: { "Content-Type": "multipart/form-data" }
       })
         .then(res => {
           console.log("图片上传回调res", res);
-          // let resUrl = "http://120.79.187.154:3000" + res.data;
-          let resUrl = "http://localhost:888" + res.data;
+          let resUrl = "http://120.79.187.154:888" + res.data;
+          // let resUrl = "http://localhost:888" + res.data;
           // 用返回的url替换预览图片连接
           this.imgSrc = resUrl;
         })

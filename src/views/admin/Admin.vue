@@ -27,6 +27,7 @@ export default {
   },
   components: {},
   methods: {
+
     navItemClick(index) {
       this.currentIndex = index;
       switch (index) {
@@ -84,14 +85,27 @@ export default {
   width: 15%;
   background-color: #fff;
 }
+.left-nav>div:hover{
+  cursor: pointer;
+}
 .left-nav > div {
   box-sizing: content-box;
   height: 5rem;
   line-height: 5rem;
   color: var(--color-tint);
-  font-size: 1.25em;
+  font-size: 1.1em;
   text-align: center;
   letter-spacing: 0.1rem;
+  overflow: hidden;
+}
+@media screen and (max-width:375px){
+  /* html{
+    font-size: 86.8%;
+  } */
+  .left-nav > div {
+    font-size: 0.8em;
+    letter-spacing: 0rem;
+  }
 }
 .active {
   border-top: 0.2rem solid var(--color-tint);
@@ -107,6 +121,7 @@ export default {
   font-size: 1.375em;
   font-weight: 700;
   text-align: center;
+  overflow: hidden;
 }
 .right-view {
   width: 80%;
